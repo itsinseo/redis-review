@@ -1,6 +1,7 @@
 package com.example.redisreview.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -25,6 +26,7 @@ public class ExternalApiService {
         return "none";
     }
 
+    @Cacheable(cacheNames = "userAgeCache", key = "#userId")
     public int getUserAge(String userId) {
         try {
             Thread.sleep(500);

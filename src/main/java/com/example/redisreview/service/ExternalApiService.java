@@ -1,10 +1,12 @@
 package com.example.redisreview.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
+@Slf4j
 @Service
 public class ExternalApiService {
 
@@ -13,6 +15,7 @@ public class ExternalApiService {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
+            log.info(e.getMessage());
         }
 
         System.out.println("getting username from other service...");
@@ -31,6 +34,7 @@ public class ExternalApiService {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
+            log.info(e.getMessage());
         }
 
         System.out.println("getting user age from other service...");

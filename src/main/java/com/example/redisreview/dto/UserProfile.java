@@ -2,5 +2,5 @@ package com.example.redisreview.dto;
 
 public record UserProfile(
         String name,
-        int age) {
+        Integer age) {
 }
